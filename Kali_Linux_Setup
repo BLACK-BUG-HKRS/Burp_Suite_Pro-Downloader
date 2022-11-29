@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+ 
+ 
+ echo "
+         ____                               _ _         ____            
+        | __ ) _   _ _ __ _ __    ___ _   _(_) |_ ___  |  _ \ _ __ ___  
+        |  _ \| | | | '__| '_ \  / __| | | | | __/ _ \ | |_) | '__/ _ \ 
+        | |_) | |_| | |  | |_) | \__ \ |_| | | ||  __/ |  __/| | | (_) |
+        |____/ \__,_|_|  | .__/  |___/\__,_|_|\__\___| |_|   |_|  \___/ 
+                         |_|                                            
+"
+
+if [[ $EUID -eq 0 ]]; then
+    # Download Burp Suite Profesional Latest Version
+    echo 'Downloading Burp Suite Professional v2022.11.2 ....'
+    Link="https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.11.2&type=jar"
+    wget "$Link" -O Burp_Suite_Pro.jar --quiet --show-progress
+    sleep 2
+
+    #execute Keygenerator
+    echo 'Starting Keygenerator'
+    (java -jar keygen.jar) &
+    sleep 3s
+
+    # Execute Burp Suite Professional with Keyloader
+    echo 'Executing Burp Suite Professional with Keyloader'
+    echo "java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:$(pwd)/loader.jar -noverify -jar $(pwd)/Burp_Suite_Pro.jar &" > burp
+    chmod +x burp
+    cp burp /bin/burp 
+    (./burp)
