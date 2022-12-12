@@ -57,11 +57,13 @@ if (Test-Path Burp-Suite-Pro.jar){
     echo "`nBurp Suite Professional is Downloaded.`n"
 }
 
+
 # Creating Burp.bat file with command for execution
 if (Test-Path burp.bat) {rm burp.bat} 
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
 $path | add-content -path Burp.bat
 echo "`nBurp.bat file is created"
+
 
 # Creating Burp-Suite-Pro.vbs File for background execution
 if (Test-Path Burp-Suite-Pro.vbs) {
@@ -70,3 +72,17 @@ if (Test-Path Burp-Suite-Pro.vbs) {
  add-content Burp-Suite-Pro.vbs "WshShell.Run chr(34) & `"$pwd\Burp.bat`" & Chr(34), 0"
  add-content Burp-Suite-Pro.vbs "Set WshShell = Nothing"
  echo "`nBurp-Suite-Pro.vbs file is created."
+
+
+ # Remove Additional files
+rm Kali_Linux_Setup.sh
+del -Recurse -Force .\.github\
+
+
+# Activate Burp Suite Professional with keygenerator and Keyloader
+echo "Reloading Environment Variables ...."
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
+echo "`n`nStarting Keygenerator ...."
+start-process java.exe -argumentlist "-jar keygen.jar"
+echo "`n`nStarting Burp Suite Professional"
+java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:"loader.jar" -noverify -jar "Burp-Suite-Pro.jar"
