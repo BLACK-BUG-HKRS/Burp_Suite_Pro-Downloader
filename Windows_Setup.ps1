@@ -62,3 +62,11 @@ if (Test-Path burp.bat) {rm burp.bat}
 $path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
 $path | add-content -path Burp.bat
 echo "`nBurp.bat file is created"
+
+# Creating Burp-Suite-Pro.vbs File for background execution
+if (Test-Path Burp-Suite-Pro.vbs) {
+    Remove-Item Burp-Suite-Pro.vbs}
+ echo "Set WshShell = CreateObject(`"WScript.Shell`")" > Burp-Suite-Pro.vbs
+ add-content Burp-Suite-Pro.vbs "WshShell.Run chr(34) & `"$pwd\Burp.bat`" & Chr(34), 0"
+ add-content Burp-Suite-Pro.vbs "Set WshShell = Nothing"
+ echo "`nBurp-Suite-Pro.vbs file is created."
