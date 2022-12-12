@@ -1,4 +1,4 @@
-<h1 align="center">Burp_Suite_Pro-Downloader</h1>
+<h1 align="center" color="blue">Burp_Suite_Pro-Downloader</h1>
 <p align="center">Download and activate Burp Suite Pro in Kali and in Windows!</p>
 
 
@@ -26,7 +26,7 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\
 -------------------------------------------------------------------------------------------
 ## Burp Suite Professional Installation steps for Kali-Linux 
 
-Execute `Kali_Linux_Setup.sh` as the root user
+- Execute `Kali_Linux_Setup.sh` as the root user
 
 
 -------------------------------------------------------------------------------------------
@@ -46,18 +46,18 @@ Execute `Kali_Linux_Setup.sh` as the root user
 -------------------------------------------------------------------------------------------
 ## Executing Burp Suite Profession after Activation
 
---> Windows :-: You can start Burp Suite Professional from Start Menu.
+- Windows :-: You can start Burp Suite Professional from Start Menu.
 
---> Kali Linux :-: You can start Burp Suite Professional by writing **burp** in terminal.
+- Kali Linux :-: You can start Burp Suite Professional by writing **burp** in terminal.
 
 
 -------------------------------------------------------------------------------------------
 ## Updating Burp Suite Professional
 
---> Replace existing Burp-Suite-Pro.jar file with latest Burp Suite Professional jar file.
+- Replace existing Burp-Suite-Pro.jar file with latest Burp Suite Professional jar file.
 
 
 -------------------------------------------------------------------------------------------
 ## License
 
---> Licnsed under **MIT**
+- Licensed under **MIT**
