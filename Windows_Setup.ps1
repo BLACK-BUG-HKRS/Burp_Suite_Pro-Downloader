@@ -29,3 +29,16 @@ if (!($jdk18)){
     echo "Required JDK-19 is Installed"
     $jdk18
 }
+
+# Check JRE-8 Availability or Download JRE-8
+$jre8 = Get-WmiObject -Class Win32_Product -filter "Vendor='Oracle Corporation'" |where Caption -clike "Java 8 Update *"
+if (!($jre8)){
+    echo "`n`t`tDownloading Java JRE ...."
+    wget "https://javadl.oracle.com/webapps/download/AutoDL?BundleId=246474_2dee051a5d0647d5be72a7c0abff270e" -O jre-8.exe
+    echo "`n`t`tJRE-8 Downloaded, lets start the Installation process"
+    start -wait jre-8.exe
+    rm jre-8.exe
+}else{
+    echo "`n`nRequired JRE-8 is Installed`n"
+    $jre8
+}
