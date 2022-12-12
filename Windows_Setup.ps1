@@ -42,3 +42,17 @@ if (!($jre8)){
     echo "`n`nRequired JRE-8 is Installed`n"
     $jre8
 }
+
+# Downloading Burp Suite Professional
+if (Test-Path Burp-Suite-Pro.jar){
+    echo "Burp Suite Professional JAR file is available.`nChecking its Integrity ...."
+    if (((Get-Item Burp-Suite-Pro.jar).length/1MB) -lt 500 ){
+        echo "`n`t`tFiles Seems to be corrupted `n`t`tDownloading Burp Suite Professional v2022.8.2 ...."
+        wget "https://portswigger.net/burp/releases/startdownload?product=pro&version=2022.8.2&type=Jar" -O "Burp-Suite-Pro.jar"
+        echo "`nBurp Suite Professional is Downloaded.`n"
+    }else {echo "File Looks fine. Lets proceed for Execution"}
+}else {
+    echo "`n`t`tDownloading Burp Suite Professional v2022.8.2 ...."
+    wget "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -O "Burp-Suite-Pro.jar"
+    echo "`nBurp Suite Professional is Downloaded.`n"
+}
