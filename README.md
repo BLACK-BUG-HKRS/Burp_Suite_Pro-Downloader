@@ -32,9 +32,9 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\
 -------------------------------------------------------------------------------------------
 ## Burp Suite Pro Activation Steps
 
-1. Modify License String like "license to Siddharth"
+1. Modify License String like "license to Major"
 
-2. Copy License key from keygen.jar and paste in Burp Suite Pro and click Next.
+2. Copy License key from `keygen.jar` and paste in Burp Suite Pro and click Next.
 
 3. Select Manual Activation Option on your bottom Right in Burp Suite Pro.
 
@@ -46,15 +46,15 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\
 -------------------------------------------------------------------------------------------
 ## Executing Burp Suite Profession after Activation
 
-- Windows :-: You can start Burp Suite Professional from Start Menu.
+- Windows - You can start Burp Suite Professional from Start Menu.
 
-- Kali Linux :-: You can start Burp Suite Professional by writing **burp** in terminal.
+- Kali Linux - You can start Burp Suite Professional by writing **burp** in terminal.
 
 
 -------------------------------------------------------------------------------------------
 ## Updating Burp Suite Professional
 
-- Replace existing Burp-Suite-Pro.jar file with latest Burp Suite Professional jar file.
+- Replace existing `Burp-Suite-Pro.jar` file with latest Burp Suite Professional jar file.
 
 
 -------------------------------------------------------------------------------------------
