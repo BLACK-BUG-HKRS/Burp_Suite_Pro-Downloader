@@ -56,3 +56,9 @@ if (Test-Path Burp-Suite-Pro.jar){
     wget "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.8.2&type=jar" -O "Burp-Suite-Pro.jar"
     echo "`nBurp Suite Professional is Downloaded.`n"
 }
+
+# Creating Burp.bat file with command for execution
+if (Test-Path burp.bat) {rm burp.bat} 
+$path = "java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:`"$pwd\loader.jar`" -noverify -jar `"$pwd\Burp-Suite-Pro.jar`""
+$path | add-content -path Burp.bat
+echo "`nBurp.bat file is created"
