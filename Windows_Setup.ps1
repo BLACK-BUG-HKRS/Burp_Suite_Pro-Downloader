@@ -86,3 +86,9 @@ echo "`n`nStarting Keygenerator ...."
 start-process java.exe -argumentlist "-jar keygen.jar"
 echo "`n`nStarting Burp Suite Professional"
 java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -javaagent:"loader.jar" -noverify -jar "Burp-Suite-Pro.jar"
+
+
+# Download the latest Burp Suite Professional jar File
+echo "`n`t`t 1. Please download latest Burp Suite Professional Jar file from :-:"
+echo "`n`t`t https://portswigger.net/burp/releases/startdownload?product=pro&version=&type=Jar"
+echo "`n`t`t 2. Replace the existing Burp-Suite-Pro.jar file with downloaded jar file. `n`t Keep previous file name"
